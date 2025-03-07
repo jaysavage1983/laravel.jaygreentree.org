@@ -1,0 +1,7 @@
+<svg id="ListingMarker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 24">
+  <title>marker</title>
+  <circle cx="10" cy="13" r="9" style="fill: #b3b3b3"/>
+  <circle cx="10" cy="12" r="9.25" style="fill: #b3b3b3"/>
+  <circle cx="10" cy="12" r="9" style="fill: #fff"/>
+  <circle cx="10" cy="12" r="5.5" style="fill: #424242"/>
+</svg>

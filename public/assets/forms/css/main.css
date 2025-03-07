@@ -1,0 +1,385 @@
+/* GLOBAL */
+
+body {
+    margin-top: 100px;
+}
+
+.navbar-brand {
+    margin-right: 25px;
+}
+
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+
+label.required:after {
+    content: "*";
+    color: #d00;
+    margin-left: 5px;
+}
+
+ul.errors {
+    display: none;
+}
+
+.has-error .form-control,
+.has-error .custom-file-label {
+    border-color: #d00 !important;
+}
+
+.has-error .form-check-label {
+    color: #d00
+}
+
+.has-error ul.errors {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: inherit;
+}
+
+.has-error ul.errors>li {
+    font-size: 80%;
+    color: #d00;
+    margin-top: .25rem;
+}
+
+.footer {
+    margin-top: 50px;
+    border-top: 1px solid #dedede;
+}
+
+#live-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: 333;
+    color: #fff;
+    font-size: .7em;
+    line-height: 1em;
+    border-top: 0px solid 333;
+}
+
+#live-wrapper .inner {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+    float: none;
+    display: block;
+}
+
+#live-btn {
+    display: block;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    background: transparent;
+    color: #fff;
+    padding: 8px 1%;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, .3);
+}
+
+#live-btn:hover {
+    text-decoration: none;
+    background: #333;
+}
+
+#live-wrapper .inner #left,
+#live-wrapper .inner #right {
+    vertical-align: middle;
+    float: inherit;
+    text-align: center;
+    display: block;
+    width: auto;
+}
+
+#live-wrapper .inner #left {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin: 0 0px 5px 0;
+}
+
+#churchonline_counter {
+    overflow: visible;
+    width: 100%;
+    padding: 0px;
+    display: none;
+}
+
+#churchonline_counter .description,
+#churchonline_counter .time li .label {
+    font-size: 0.5em;
+    text-transform: uppercase;
+}
+
+#churchonline_counter .time {
+    list-style: none;
+    padding: 0;
+    margin: 0px 0 0 0;
+    display: inline-block;
+}
+
+#churchonline_counter .time li {
+    float: none;
+    padding: 14px 5px 12px !important;
+    width: auto;
+    text-align: center;
+    background: #741315;
+    border-color: white;
+    margin: 0 5px 0 0;
+    display: inline-block;
+    border-radius: 5px;
+    line-height: 0em;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 1), 1px 1px 0px rgba(255, 255, 255, .2);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 1), 1px 1px 0px rgba(255, 255, 255, .2);
+    position: relative;
+    font-size: 1.5em;
+}
+
+#churchonline_counter .time li:before {
+    content: '';
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAHElEQVQIW2NkwAIYcQnORJdg/P//vzGGINFmAgD0EQPQwICdMQAAAABJRU5ErkJggg==);
+    background-repeat: repeat-x;
+    background-position: 0 50%;
+}
+
+#churchonline_counter .time li:first-child {
+    padding-left: 0;
+}
+
+#churchonline_counter .time li span {
+    font-size: 1.2em;
+}
+
+#churchonline_counter .time li br {
+    display: none;
+}
+
+#churchonline_counter .live {
+    display: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    line-height: 1em;
+    color: #fff;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+    color: #ffffff;
+    font-size: 1.3em !important;
+    font-weight: bold;
+}
+
+.nav_container {
+    border-bottom: 1px solid #000;
+}
+
+@media screen and (min-width:481px) {
+
+    #live-wrapper .inner #left,
+    #live-wrapper .inner #right {
+        display: inline-block;
+    }
+
+    #live-wrapper .inner #left {
+        font-size: 1.1em;
+        margin: 0 0px 0 0;
+    }
+}
+
+@media screen and (min-width:769px) {
+    #live-wrapper {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 0;
+        font-size: .8em;
+        background: none;
+        border-top: none;
+    }
+
+    #live-wrapper .inner {
+        float: none;
+        text-align: right;
+    }
+
+    #live-btn {
+        display: inline-block;
+        /*
+        border-radius: .25em;
+        -webkit-border-radius: 0 0 10px 10px;
+        box-shadow: inset 3px 0px 0px rgba(0, 0, 0, .2), 2px 2px 0px rgba(255, 255, 255, 1);
+        -webkit-box-shadow: inset 3px 0px 0px rgba(0, 0, 0, .2), 2px 2px 0px rgba(255, 255, 255, 1);
+        */
+    }
+
+    #live-wrapper .inner #left,
+    #live-wrapper .inner #right {
+        float: none;
+    }
+
+    /* Start Announcement Bar Styling */
+    .announcement-bar {
+        padding-top: 0px;
+        height: 50px;
+        background-color: #333;
+
+        color: #FFFFFF;
+        font-weight: normal;
+        font-family: Heebo;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .announcement-bar a {
+        color: #000;
+    }
+
+    .announcement-bar span {
+        display: block;
+    }
+
+    .btn-live {
+        display: inline;
+        color: #FFFFFF;
+        margin: 0px 10px;
+        padding: 2px 12px 2px 12px;
+        background-color: #741315;
+        border: none;
+    }
+
+    /* Annoucement Bar Mobile Styling */
+    @media screen and (min-width: 1024px) {
+        .announcement-bar {
+            padding: 1px 0px;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        .announcement-bar span {
+            display: inline-block;
+            margin: 0px 5px;
+        }
+    }
+
+    /* End Announcement Bar Styling */
+    .btn-live {
+        color: white;
+        background-color: #741315;
+        border-color: black;
+    }
+
+    .btn-live {
+        color: white;
+        background-color: #741315;
+        border-color: #ccc
+    }
+
+    .btn-live.focus,
+    .btn-live:focus {
+        color: white;
+        background-color: #741315;
+        border-color: #8c8c8c
+    }
+
+    .btn-live:hover {
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad
+    }
+
+    .btn-live.active,
+    .btn-live:active,
+    .open>.dropdown-toggle.btn-live {
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad
+    }
+
+    .btn-live.active.focus,
+    .btn-live.active:focus,
+    .btn-live.active:hover,
+    .btn-live:active.focus,
+    .btn-live:active:focus,
+    .btn-live:active:hover,
+    .open>.dropdown-toggle.btn-live.focus,
+    .open>.dropdown-toggle.btn-live:focus,
+    .open>.dropdown-toggle.btn-live:hover {
+        color: #333;
+        background-color: #d4d4d4;
+        border-color: #8c8c8c
+    }
+
+    .btn-live.active,
+    .btn-live:active,
+    .open>.dropdown-toggle.btn-live {
+        background-image: none
+    }
+
+    .btn-live.disabled.focus,
+    .btn-live.disabled:focus,
+    .btn-live.disabled:hover,
+    .btn-live[disabled].focus,
+    .btn-live[disabled]:focus,
+    .btn-live[disabled]:hover,
+    fieldset[disabled] .btn-live.focus,
+    fieldset[disabled] .btn-live:focus,
+    fieldset[disabled] .btn-live:hover {
+        background-color: #fff;
+        border-color: #ccc
+    }
+
+    .pulse {
+        overflow: visible;
+        position: relative;
+    }
+
+    .pulse:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: inherit;
+        border-radius: inherit;
+        transition: opacity .3s, transform .3s;
+        animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+        z-index: -1;
+    }
+
+    @keyframes pulse-animation {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0;
+            transform: scale(1.5);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(1.5);
+        }
+    }
+
