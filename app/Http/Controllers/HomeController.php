@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+use App\Models\Post; // Assuming your Post model is in App\Models
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class HomeController extends Controller 
 {
-    public function welcome()
+    public function index() 
     {
-        return view('welcome');
-    }
+        $Posts = Post::latest()->take(3)->get(); // Fetch the 3 latest posts
+            return view('pages.home', compact('Posts')); // Pass data to the 'home' view
+        }
 }

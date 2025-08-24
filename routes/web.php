@@ -1,20 +1,29 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+  return view('home');
+})->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('/articles', PostController::class)->names([
+  'index' => 'posts.index',
+  'create' => 'posts.create',
+  'store' => 'posts.store',
+  'delete' => 'posts.delete',
+]);
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::get('/articles/{post}', [PostController::class, 'show'])->name('posts.show');
 
-require __DIR__.'/auth.php';
+#Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/about', [PagesController::class, 'about'])->name('about');
+#Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+
+Route::get('/contact', [ContactFormController::class, 'create'])->name('contact.create');
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
